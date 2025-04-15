@@ -1,0 +1,96 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "dev.drtheo",
+    "module": "queue",
+    "version": "1.0.2-1.20",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "queue-1.0.2-1.20.jar",
+          "url": "queue-1.0.2-1.20.jar",
+          "size": 35519,
+          "sha512": "e88e36a75b1cd18d8e2d20964a1274d8f061e32b05149dbc2a47f99bc664bcee885677392f0b13a2618d3ff6b32b823db7fdb97e9a6ded31cb33dd704f86b468",
+          "sha256": "6c1a870d3f88852ac219a3e2cb9ade0a0b9b30630d2d9cdc69098f3c09cd456a",
+          "sha1": "d5a38c571612e211d8a221b8a2f3c8011ac27bc3",
+          "md5": "7b5bbebf61e461bab672ec1ec014cd41"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "net.fabricmc",
+          "module": "fabric-loader",
+          "version": {
+            "requires": "0.16.0"
+          }
+        },
+        {
+          "group": "com.github.DrTheodor",
+          "module": "mc-scheduler",
+          "version": {
+            "requires": "1.0.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "queue-1.0.2-1.20.jar",
+          "url": "queue-1.0.2-1.20.jar",
+          "size": 35519,
+          "sha512": "e88e36a75b1cd18d8e2d20964a1274d8f061e32b05149dbc2a47f99bc664bcee885677392f0b13a2618d3ff6b32b823db7fdb97e9a6ded31cb33dd704f86b468",
+          "sha256": "6c1a870d3f88852ac219a3e2cb9ade0a0b9b30630d2d9cdc69098f3c09cd456a",
+          "sha1": "d5a38c571612e211d8a221b8a2f3c8011ac27bc3",
+          "md5": "7b5bbebf61e461bab672ec1ec014cd41"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "queue-1.0.2-1.20-sources.jar",
+          "url": "queue-1.0.2-1.20-sources.jar",
+          "size": 10622,
+          "sha512": "7c6891352fb5dd26c6795153785be1e824a10579b0a730d44d2f45d3e7fb22b8abce7db1b6a328136def8073f3ea7de40f79c4dc77e10c117533d3d7c0bf2feb",
+          "sha256": "74137cdfe48fcd6da132aff5f0d11c7a4a5e69947443b0454d6b40ae7b72f420",
+          "sha1": "c27e379add9dde5ef75a7820c6f0e445060ff6dc",
+          "md5": "337b587c555e40cda4684dce09334510"
+        }
+      ]
+    }
+  ]
+}
