@@ -1,0 +1,69 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "dev.drtheo",
+    "module": "autojson",
+    "version": "0.0.5",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.10"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "autojson-0.0.5.jar",
+          "url": "autojson-0.0.5.jar",
+          "size": 74269,
+          "sha512": "218a19c09535eb001e87fe69d619839cad44c1ef7104b16d930f87160c00b14fc8b1ffcc322555e3e4a8c2e32bbbe6e5d6fb696824c8428bc36b7f1dfdb259b7",
+          "sha256": "6d106b4a45c82b9bdb565593e59212d99efd958fa2b02d85adf2bf2f3f82efd2",
+          "sha1": "ae0620f290977356bf5279edf9af3c41ee4f5172",
+          "md5": "01482d0c423597b04328f44363dca34e"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "com.google.code.gson",
+          "module": "gson",
+          "version": {
+            "requires": "2.8.9"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "autojson-0.0.5.jar",
+          "url": "autojson-0.0.5.jar",
+          "size": 74269,
+          "sha512": "218a19c09535eb001e87fe69d619839cad44c1ef7104b16d930f87160c00b14fc8b1ffcc322555e3e4a8c2e32bbbe6e5d6fb696824c8428bc36b7f1dfdb259b7",
+          "sha256": "6d106b4a45c82b9bdb565593e59212d99efd958fa2b02d85adf2bf2f3f82efd2",
+          "sha1": "ae0620f290977356bf5279edf9af3c41ee4f5172",
+          "md5": "01482d0c423597b04328f44363dca34e"
+        }
+      ]
+    }
+  ]
+}
