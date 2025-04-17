@@ -27,11 +27,11 @@
         {
           "name": "autojson-0.0.3.jar",
           "url": "autojson-0.0.3.jar",
-          "size": 73679,
-          "sha512": "729b0c75e2662bedab742632022cbd707ee7786f68bb47c5a626900e81c8826d524ea297b3d3779d2455875a363e56fa8f37a38c63f2460bfddaad0bd5ceebe4",
-          "sha256": "806770a139e62140e700ed32db27e601b2297b52be90496d0a6ccf9472ee9b13",
-          "sha1": "4c011c6e9a03719ab7f4d0ab07a8d2b064bd8016",
-          "md5": "bfc600011507ed567c2a0f8bdb7a8658"
+          "size": 73748,
+          "sha512": "c9db1f7e8a9285c2b6fd5585b0908e866b591457117e81fc330e68e51354062a623ca417ab774f72285e5e8f0ca8e7152b7fc33cdd137c1b30c3e0e599b5fa5e",
+          "sha256": "763d5c6dcab8cebef2b09fac7faeabb18acf11df95f5ae09653030586e45263a",
+          "sha1": "818689ee5e721971b3672d6f89805e10a294defc",
+          "md5": "726f90efd3862d2bffee7da3c675cdbe"
         }
       ]
     },
@@ -57,11 +57,11 @@
         {
           "name": "autojson-0.0.3.jar",
           "url": "autojson-0.0.3.jar",
-          "size": 73679,
-          "sha512": "729b0c75e2662bedab742632022cbd707ee7786f68bb47c5a626900e81c8826d524ea297b3d3779d2455875a363e56fa8f37a38c63f2460bfddaad0bd5ceebe4",
-          "sha256": "806770a139e62140e700ed32db27e601b2297b52be90496d0a6ccf9472ee9b13",
-          "sha1": "4c011c6e9a03719ab7f4d0ab07a8d2b064bd8016",
-          "md5": "bfc600011507ed567c2a0f8bdb7a8658"
+          "size": 73748,
+          "sha512": "c9db1f7e8a9285c2b6fd5585b0908e866b591457117e81fc330e68e51354062a623ca417ab774f72285e5e8f0ca8e7152b7fc33cdd137c1b30c3e0e599b5fa5e",
+          "sha256": "763d5c6dcab8cebef2b09fac7faeabb18acf11df95f5ae09653030586e45263a",
+          "sha1": "818689ee5e721971b3672d6f89805e10a294defc",
+          "md5": "726f90efd3862d2bffee7da3c675cdbe"
         }
       ]
     }
