@@ -1,0 +1,69 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "dev.drtheo",
+    "module": "autojson",
+    "version": "0.0.7",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.10"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "autojson-0.0.7.jar",
+          "url": "autojson-0.0.7.jar",
+          "size": 74795,
+          "sha512": "55ac6059bac4cb27ba5a64893bcdd8dc97e28ff2ca4e9f70868d3aa7cffc215c8d1a810e80b86900eb364decabfd8346b81bf723c14a730b5b87e3e04298212b",
+          "sha256": "026fcfd6731aa8b41378574dc5a83d59c66e084c0239269ba3d4406b25b7d7d5",
+          "sha1": "fd43016794c9edd24ce3107b3c8ec2c545e5faf3",
+          "md5": "309dd5ba47ef4690c2c32904c3dc1a2d"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "com.google.code.gson",
+          "module": "gson",
+          "version": {
+            "requires": "2.8.9"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "autojson-0.0.7.jar",
+          "url": "autojson-0.0.7.jar",
+          "size": 74795,
+          "sha512": "55ac6059bac4cb27ba5a64893bcdd8dc97e28ff2ca4e9f70868d3aa7cffc215c8d1a810e80b86900eb364decabfd8346b81bf723c14a730b5b87e3e04298212b",
+          "sha256": "026fcfd6731aa8b41378574dc5a83d59c66e084c0239269ba3d4406b25b7d7d5",
+          "sha1": "fd43016794c9edd24ce3107b3c8ec2c545e5faf3",
+          "md5": "309dd5ba47ef4690c2c32904c3dc1a2d"
+        }
+      ]
+    }
+  ]
+}
