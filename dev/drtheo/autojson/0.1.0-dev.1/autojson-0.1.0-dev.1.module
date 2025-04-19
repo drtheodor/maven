@@ -27,11 +27,11 @@
         {
           "name": "autojson-0.1.0-dev.1.jar",
           "url": "autojson-0.1.0-dev.1.jar",
-          "size": 76462,
-          "sha512": "2079124ff50280941f4a2c246bd680de587baaaf323c7891a412a12e0c035cba0e9faca7708473a2ac10799345f3c42e726f73b00cc96607c1261d6b486a42f8",
-          "sha256": "a3c34752c27f462dea26ddcd92fb16a7c05bde5992d5d9c3512707d3c8a591ea",
-          "sha1": "e2cc651f2285fefafbbd45c04e8be78ed4b026fd",
-          "md5": "0a4bd3201c9d5f45d26e4637b6294514"
+          "size": 76508,
+          "sha512": "660936ec7104654bd1ce79055b31f365a7cf5890053033072093025be921d5d1ca7a9160e8b10c96cdaa03ba32708524e1fade86c9ae657537efcf2fc63ff993",
+          "sha256": "97c12587863d22e0d29305f8e95a3d7fdca3b4fe1d8a500d4fa2d9e17b1fbe2a",
+          "sha1": "f9573554abb69bc845515a1277aaf64273bf0936",
+          "md5": "bfa87954c183568687aed712a050887e"
         }
       ]
     },
@@ -48,11 +48,11 @@
         {
           "name": "autojson-0.1.0-dev.1.jar",
           "url": "autojson-0.1.0-dev.1.jar",
-          "size": 76462,
-          "sha512": "2079124ff50280941f4a2c246bd680de587baaaf323c7891a412a12e0c035cba0e9faca7708473a2ac10799345f3c42e726f73b00cc96607c1261d6b486a42f8",
-          "sha256": "a3c34752c27f462dea26ddcd92fb16a7c05bde5992d5d9c3512707d3c8a591ea",
-          "sha1": "e2cc651f2285fefafbbd45c04e8be78ed4b026fd",
-          "md5": "0a4bd3201c9d5f45d26e4637b6294514"
+          "size": 76508,
+          "sha512": "660936ec7104654bd1ce79055b31f365a7cf5890053033072093025be921d5d1ca7a9160e8b10c96cdaa03ba32708524e1fade86c9ae657537efcf2fc63ff993",
+          "sha256": "97c12587863d22e0d29305f8e95a3d7fdca3b4fe1d8a500d4fa2d9e17b1fbe2a",
+          "sha1": "f9573554abb69bc845515a1277aaf64273bf0936",
+          "md5": "bfa87954c183568687aed712a050887e"
         }
       ]
     },
@@ -68,11 +68,11 @@
         {
           "name": "autojson-0.1.0-dev.1-sources.jar",
           "url": "autojson-0.1.0-dev.1-sources.jar",
-          "size": 36981,
-          "sha512": "632960b4246b07d9a6524948799628ae6025b8d174a2b11d4e102815c3c3240648bc475a1774267d146176554dce530ce910a7c285ba7d0baa9bdf8dbe16b9a7",
-          "sha256": "6d8569480e541686c30d58efdcf889b4262abaeba991d2018790ea4545910450",
-          "sha1": "313784b6bbc6370700ee5e8b310dbb039d7dcaef",
-          "md5": "d28af9f7a0c82359ac3093aeff89a97f"
+          "size": 37020,
+          "sha512": "630180ec25ce7eefa45bcfb213df4e58f375a1e48ee378d59a41802d0d0a51ba1155446379e96e74fd079d06f6d446df65b13a1a5ec1db7f6f58d256642893a7",
+          "sha256": "591dd2a3ff87c3962ec3149fffe9774237e9770c82d51fc98fd2c0166f0e6f8a",
+          "sha1": "dd20d1d3d867c3f5ebabb9b2583bb927ac06e3f8",
+          "md5": "835cc3526993102b72bfe9f305fea6bb"
         }
       ]
     },
@@ -88,11 +88,11 @@
         {
           "name": "autojson-0.1.0-dev.1-javadoc.jar",
           "url": "autojson-0.1.0-dev.1-javadoc.jar",
-          "size": 316074,
-          "sha512": "da1d95dbf5bf80066b460cb0141655f4aa017d5a514c413ba479ec801f32179050e05c8fe06ca63e9a3979d8af4219d54ee9b33f40421b314656f904bbc90e22",
-          "sha256": "d810b3dc4c89c77f48e6159bcd27805a3b50914c468ef39314d7ffa9ebf359ac",
-          "sha1": "72753afe1f9126be6b5514a07a1930a842bdfab8",
-          "md5": "eff0c391c8109547ae03cf486e5eaf40"
+          "size": 316165,
+          "sha512": "cd06b4d0fc5e3c5e655d9128b996c072edf740033914f7d2e8339cb47333fbf5a2a2f65229a77f962c3e8477e96adb01d55462ac5f9d05a49b4d8acd7b781f06",
+          "sha256": "10fe4d9e0ac76a784d9d42f3a54c1714f6bd60b09462dd1b4e4f8f9ebbf70e2c",
+          "sha1": "a9ba009d80445e8d4760f7b979b31f8937c97523",
+          "md5": "c762970b279b0b6d499bad2d1e8fad7d"
         }
       ]
     }
