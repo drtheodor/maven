@@ -3,8 +3,8 @@
   <groupId>dev.drtheo</groupId>
   <artifactId>autojson</artifactId>
   <versioning>
-    <latest>0.2.1-dev.1</latest>
-    <release>0.2.1-dev.1</release>
+    <latest>0.3.0-dev.1</latest>
+    <release>0.3.0-dev.1</release>
     <versions>
       <version>0.0.1</version>
       <version>0.0.2</version>
@@ -18,7 +18,8 @@
       <version>0.1.0-dev.1</version>
       <version>0.2.0-dev.1</version>
       <version>0.2.1-dev.1</version>
+      <version>0.3.0-dev.1</version>
     </versions>
-    <lastUpdated>20250424064110</lastUpdated>
+    <lastUpdated>20250425102208</lastUpdated>
   </versioning>
 </metadata>
