@@ -1,0 +1,80 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "dev.drtheo",
+    "module": "autojson",
+    "version": "0.3.2-dev.2",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.10"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "autojson-0.3.2-dev.2.jar",
+          "url": "autojson-0.3.2-dev.2.jar",
+          "size": 88628,
+          "sha512": "fe57b4c0e82b95ad3db329833c045e8c69e902965586d19685bf6cfd406110b310ccb47eb3446f3aeb149ffa0f1526b4a0de31e9595f219849663f675749e8d2",
+          "sha256": "7a7a06e8fa4de35190a00b91f7213c444f12376e9f5f6f59b7ae4a967228cfd4",
+          "sha1": "eb95c573f26c15391c280153a0a402a88a2a32df",
+          "md5": "674b275c709cebb27c8a0e100e20b87c"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "autojson-0.3.2-dev.2.jar",
+          "url": "autojson-0.3.2-dev.2.jar",
+          "size": 88628,
+          "sha512": "fe57b4c0e82b95ad3db329833c045e8c69e902965586d19685bf6cfd406110b310ccb47eb3446f3aeb149ffa0f1526b4a0de31e9595f219849663f675749e8d2",
+          "sha256": "7a7a06e8fa4de35190a00b91f7213c444f12376e9f5f6f59b7ae4a967228cfd4",
+          "sha1": "eb95c573f26c15391c280153a0a402a88a2a32df",
+          "md5": "674b275c709cebb27c8a0e100e20b87c"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "autojson-0.3.2-dev.2-sources.jar",
+          "url": "autojson-0.3.2-dev.2-sources.jar",
+          "size": 44105,
+          "sha512": "8fe7b83e8295cf890fae08f49f57d291bc8fca532ed05dc4e40a554c37a1c8d8aabba2e3908493fffcf2cbc9f230a1580f298c6240cf54bc70ba1ab7fb131760",
+          "sha256": "b8ee661723180ff202cb388990234e31de36c7d494353d699be9cecada92eec3",
+          "sha1": "f4b228a24f3b16c3bbdb97c15122b0604ae38c08",
+          "md5": "76987efc5aaf8860fed8dd70648ae91a"
+        }
+      ]
+    }
+  ]
+}
