@@ -1,0 +1,96 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "dev.drtheo",
+    "module": "scheduler",
+    "version": "1.1.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "scheduler-1.1.0.jar",
+          "url": "scheduler-1.1.0.jar",
+          "size": 29828,
+          "sha512": "36c2b606bebc359c391e52ca2b8deec6dd25a3204f63d1b0a6fec1c9ba112d79aa33e4f4c996310aff1fc028242ea2a82acb09a993819ace1b0e1af1d3ffb98a",
+          "sha256": "722f8bd5bfa27c01e97445b561d519b2a9fc01d5b90f52bb95ca688a551b4dd0",
+          "sha1": "ad957c856914ca2e2b784f359b8ab5fa40214a5f",
+          "md5": "54074ec96e17450b36d6f4e274f707d7"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "net.fabricmc",
+          "module": "fabric-loader",
+          "version": {
+            "requires": "0.16.10"
+          }
+        },
+        {
+          "group": "net.fabricmc.fabric-api",
+          "module": "fabric-api",
+          "version": {
+            "requires": "0.77.0+1.18.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "scheduler-1.1.0.jar",
+          "url": "scheduler-1.1.0.jar",
+          "size": 29828,
+          "sha512": "36c2b606bebc359c391e52ca2b8deec6dd25a3204f63d1b0a6fec1c9ba112d79aa33e4f4c996310aff1fc028242ea2a82acb09a993819ace1b0e1af1d3ffb98a",
+          "sha256": "722f8bd5bfa27c01e97445b561d519b2a9fc01d5b90f52bb95ca688a551b4dd0",
+          "sha1": "ad957c856914ca2e2b784f359b8ab5fa40214a5f",
+          "md5": "54074ec96e17450b36d6f4e274f707d7"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "scheduler-1.1.0-sources.jar",
+          "url": "scheduler-1.1.0-sources.jar",
+          "size": 10017,
+          "sha512": "c9ea674a349bef46c42d309b2b38c9960dae3e368c368d9ff17f30a5d3d3946e943c58ea74606baa43c7bc159384f9e0761a3e31adb445a569a7695038794cce",
+          "sha256": "ddbd28a74434ff8d3a8ea12593032e4e54d4583ae4e5dd772ef383d388da7f9c",
+          "sha1": "51111aac293e2be5b4e3af595207d4d484b20e04",
+          "md5": "a0d25d5279b5260277c309168a268867"
+        }
+      ]
+    }
+  ]
+}
