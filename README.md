@@ -21,6 +21,7 @@ repositories {
   
 ```kt
 repositories {
+    // ...
     maven("https://theo.is-a.dev/maven/releases")
 }
 ```
