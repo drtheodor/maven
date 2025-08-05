@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import type { FileType } from './types';
+
+export type FileType = 'file' | 'directory';
 
 type FileEntry = {
   path: string,

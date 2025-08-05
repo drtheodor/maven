@@ -1,8 +1,7 @@
 ---
-import { getAllFiles } from '@/util/files';
-import { readFile, readFileSync } from 'fs';
+import { type FileType, getAllFiles } from '@/util/files';
+import { permalink } from "@/util/link";
 import FilePreview from '@/components/FilePreview.astro';
-import type { FileType } from '@/util/types';
 import DirectoryPreview from '@/components/DirectoryPreview.astro';
 
 export function getStaticPaths() {
@@ -38,14 +37,14 @@ const isFile = type === 'file';
     <h1>{path}</h1>
     
     <div class="breadcrumbs">
-        <a href="/browse/">Root</a>
+        <a href={permalink("/browse/")}>Root</a>
         {path.split('/').filter(Boolean).map((segment, i, arr) => {
             let pathSoFar = arr.slice(0, i + 1).join('/');
 
             if (i < arr.length - (isFile ? 1 : 0)) pathSoFar += '/';
 
             return [
-              ' / ', <a href={`/browse/${pathSoFar}`}>{segment}</a>
+              ' / ', <a href={permalink(`/browse/${pathSoFar}`)}>{segment}</a>
             ];
         })}
     </div>
