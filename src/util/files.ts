@@ -9,64 +9,66 @@ type FileEntry = {
 
 const BASE_PATH = './releases';
 
-export function scanDirectory1(dir: string, recursive: boolean, base = ''): FileEntry[] {
-  const results: FileEntry[] = [];
-  const fullDirPath = path.posix.join(BASE_PATH, dir, base);
-  
-  // Check if directory exists
-  if (!fs.existsSync(fullDirPath))
-    return results;
-
-  const files = fs.readdirSync(fullDirPath);
-
-  files.forEach(file => {
-    const relativePath = path.posix.join(base, file);
-    const fullPath = path.posix.join(BASE_PATH, dir, relativePath);
-    
-    if (fs.statSync(fullPath).isDirectory()) {
-      if (recursive) {
-        results.push(...scanDirectory1(dir, recursive, relativePath));
-      } else {
-        results.push({ path: relativePath + '/', type: 'directory' });
-      }
-    } else {
-      results.push({ path: relativePath, type: 'file' });
-    }
-  });
-
-  return results;
+export function readLocal(fpath: string): string {
+  return fs.readFileSync(path.posix.join(BASE_PATH, fpath)).toString();
 }
 
-export function scanDirectory(dir: string, base = ''): FileEntry[] {
-  const results: FileEntry[] = [];
+export function scanDirectory(
+  dir: string,
+  options: { recursive?: boolean } = {},
+  base: string = ''
+): FileEntry[] {
+  const { recursive = false } = options;
   const fullDirPath = path.join(BASE_PATH, dir, base);
   
-  // Check if directory exists
-  if (!fs.existsSync(fullDirPath))
-    return results;
-  
-  const files = fs.readdirSync(fullDirPath);
-  
-  results.push({ path: base, type: 'directory' });
+  if (!fs.existsSync(fullDirPath)) {
+    return [];
+  }
 
-  files.forEach(file => {
+  const files = fs.readdirSync(fullDirPath);
+  const results: FileEntry[] = [];
+
+  // Add current directory entry (except root which is handled separately)
+  if (base || !dir) {
+    results.push({
+      path: base.endsWith('/') ? base : `${base}/`,
+      type: 'directory'
+    });
+  }
+
+  for (const file of files) {
     const relativePath = path.posix.join(base, file);
-    const fullPath = path.posix.join(BASE_PATH, dir, relativePath);
-    
-    if (fs.statSync(fullPath).isDirectory()) {
-      results.push(...scanDirectory(dir, relativePath));
+    const fullPath = path.join(BASE_PATH, dir, relativePath);
+    const stat = fs.statSync(fullPath);
+
+    if (stat.isDirectory()) {
+      if (recursive) {
+        results.push(...scanDirectory(dir, options, relativePath));
+      } else {
+        results.push({
+          path: `${relativePath}/`,
+          type: 'directory'
+        });
+      }
     } else {
-      results.push({ path: relativePath, type: 'file' });
+      results.push({
+        path: relativePath,
+        type: 'file'
+      });
     }
-  });
+  }
 
   return results;
 }
 
-const files = scanDirectory('');
+export function getAllFiles(dir: string = ''): Array<{
+  params: { path: string };
+  props: FileEntry;
+}> {
+  const files = scanDirectory(dir, { recursive: true });
 
-export function getAllFiles() {
-  const res = files.map(file => ({ params: { path: file.path }, props: { ...file } }));
-  
-  return res;
+  return files.map(file => ({
+    params: { path: file.path },
+    props: { ...file }
+  }));
 }

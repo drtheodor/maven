@@ -1,5 +1,6 @@
 ---
-import { scanDirectory1 } from '@/util/files';
+import { scanDirectory } from '@/util/files';
+import FileItem from './FileItem.astro';
 
 interface Props {
     path: string,
@@ -7,56 +8,33 @@ interface Props {
 
 const { path } = Astro.props;
 
-const items = scanDirectory1(path, false);
-const isRoot = !path.length;
+const isRoot = path === '/';
+const items = scanDirectory(path);
+
+if (!isRoot) items.push({ path: '../', type: 'directory' });
 ---
 
-{items.length === 0 ? (
+{!items ? (
     <p>This directory is empty.</p>
 ) : (
     <ul class="file-list">
-        {!isRoot && (
-        <li class="file-item">
-            <div class="file-icon">📁</div>
-            <div class="file-name">
-            <a href={`../`}>.. (Parent Directory)</a>
-            </div>
-        </li>
-        )}
-        
         {items
-        .sort((a, b) => a.type.localeCompare(b.type) || a.path.localeCompare(b.path))
-        .map(item => {
-            const name = item.path;
-            
-            if (!name) return;
-
-            return (
-            <li class="file-item">
-                <div class="file-icon">
-                {item.type === 'directory' ? '📁' : '📄'}
-                </div>
-                <div class="file-name">
-                <a href={item.path}>{name}</a>
-                </div>
-                {item.type === 'file' && (
-                <div class="file-actions">
-                    <a href={`/${item.path}`} class="button" download>Download</a>
-                </div>
-                )}
-            </li>
-            );
-        })
+            .filter(v => v.path)
+            .sort((a, b) => a.type.localeCompare(b.type) || a.path.localeCompare(b.path))
+            .map(item => {
+                return (
+                    <FileItem {...item} />
+                );
+            })
         }
     </ul>
 )}
+
 <style>
     .file-list { list-style: none; padding: 0; }
+    
+    .file-name { flex-grow: 1; }
+    .file-icon { margin-right: 10px; width: 24px; text-align: center; }
     .file-item { padding: 10px; margin: 5px 0; background: white; border: 1px solid #eee; border-radius: 4px; display: flex; align-items: center; }
     .file-item:hover { background: #f9f9f9; }
-    .file-icon { margin-right: 10px; width: 24px; text-align: center; }
-    .file-name { flex-grow: 1; }
-    .file-actions { display: flex; gap: 10px; }
-    .button { padding: 6px 12px; background: #0070f3; color: white; text-decoration: none; border-radius: 4px; font-size: 14px; }
-    .button.secondary { background: #666; }
 </style>

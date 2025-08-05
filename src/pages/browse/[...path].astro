@@ -20,44 +20,43 @@ const isFile = type === 'file';
 ---
 
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>Viewing: {path}</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Viewing: {path}</title>
+    <style>
+      body { 
+        font-family: sans-serif; 
+        max-width: 800px; 
+        margin: 0 auto; 
+        padding: 20px; 
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>{path}</h1>
+    
+    <div class="breadcrumbs">
+        <a href="/browse/">Root</a>
+        {path.split('/').filter(Boolean).map((segment, i, arr) => {
+            let pathSoFar = arr.slice(0, i + 1).join('/');
+
+            if (i < arr.length - (isFile ? 1 : 0)) pathSoFar += '/';
+
+            return [
+              ' / ', <a href={`/browse/${pathSoFar}`}>{segment}</a>
+            ];
+        })}
+    </div>
+    
+    {isFile ? (
+      <FilePreview path={path} />
+    ) : (
+      <DirectoryPreview path={path} /> 
+    )}
   <style>
-    body { 
-      font-family: sans-serif; 
-      max-width: 800px; 
-      margin: 0 auto; 
-      padding: 20px; 
-      line-height: 1.6;
-    }
+    .breadcrumbs { margin-bottom: 20px; padding: 10px; background: #f5f5f5; border-radius: 4px; }
   </style>
-</head>
-<body>
-  <h1>{path}</h1>
-  
-  <div class="breadcrumbs">
-      <a href="/browse/">Root</a>
-      {path.split('/').filter(Boolean).map((segment, i, arr) => {
-          let pathSoFar = arr.slice(0, i + 1).join('/');
-
-          if (isFile && i < arr.length - 1) pathSoFar += '/';
-
-          return [
-            ' / ', <a href={`/browse/${pathSoFar}`}>{segment}</a>
-          ];
-      })}
-  </div>
-  
-  {isFile ? (
-    <FilePreview path={path} />
-  ) : (
-    <DirectoryPreview path={path} /> 
-  )}
-<style>
-      .breadcrumbs { margin-bottom: 20px; padding: 10px; background: #f5f5f5; border-radius: 4px; }
-
-</style>
-</body>
+  </body>
 </html>
