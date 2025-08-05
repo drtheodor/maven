@@ -23,7 +23,7 @@ if (!isRoot) items.push({ path: '../', type: 'directory' });
             .sort((a, b) => a.type.localeCompare(b.type) || a.path.localeCompare(b.path))
             .map(item => {
                 return (
-                    <FileItem {...item} />
+                    <FileItem parent={path} {...item} />
                 );
             })
         }

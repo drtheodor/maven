@@ -1,14 +1,16 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
+const BASE_URL = '/maven';
+
 // https://astro.build/config
 export default defineConfig({
     output: 'static',
-    base: '/maven',
+    base: BASE_URL,
     redirects: {
         '/': {
             status: 302,
-            destination: '/browse/',
+            destination: `${BASE_URL}/browse/`,
         },
     },
 });

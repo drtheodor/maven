@@ -1,12 +1,14 @@
 ---
 import type { FileType } from '@/util/files'
+import { permalink } from '@/util/link';
 
 interface Props {
+    parent: string,
     path: string,
     type: FileType,
 }
 
-const { path, type } = Astro.props;
+const { parent, path, type } = Astro.props;
 ---
 
 
@@ -21,7 +23,7 @@ const { path, type } = Astro.props;
     
     {type === 'file' && (
         <div class="file-actions">
-            <a href={`/${path}`} class="button" download>Download</a>
+            <a href={permalink(parent, path)} class="button" download>Download</a>
         </div>
     )}
 </li>
