@@ -1,3 +1,4 @@
+import { boolean } from 'astro:schema';
 import fs from 'fs';
 import path from 'path';
 
@@ -6,6 +7,14 @@ export type FileType = 'file' | 'directory';
 type FileEntry = {
   path: string,
   type: FileType,
+}
+
+export function isReadable(fpath: string): boolean {
+  return /\.(txt|md|html|css|js|json|bat|xml)$/i.test(fpath);
+}
+
+export function isViewable(fpath: string): boolean {
+  return /\.(jpg|jpeg|png|gif|webp)$/i.test(fpath);
 }
 
 const BASE_PATH = './releases';

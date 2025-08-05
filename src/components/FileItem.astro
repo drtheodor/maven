@@ -11,15 +11,12 @@ interface Props {
 const { parent, path, type } = Astro.props;
 ---
 
-
-<li class="file-item">
+<li class="card">
     <div class="file-icon">
         {type === 'directory' ? '📁' : '📄'}
     </div>
     
-    <div class="file-name">
-        <a href={path}>{path}</a>
-    </div>
+        <a class="file-name" href={path}>{path}</a>
     
     {type === 'file' && (
         <div class="file-actions">
@@ -30,11 +27,9 @@ const { parent, path, type } = Astro.props;
 
 <style>
     .file-actions { display: flex; gap: 10px; }
-    .button { padding: 6px 12px; background: #0070f3; color: white; text-decoration: none; border-radius: 4px; font-size: 14px; }
+    .button { padding: 6px 12px; background: var(--primary-color); color: white; text-decoration: none; border-radius: 4px; font-size: 14px; }
     .button.secondary { background: #666; }
 
-    .file-name { flex-grow: 1; }
+    .file-name { flex-grow: 1; width: 100%; }
     .file-icon { margin-right: 10px; width: 24px; text-align: center; }
-    .file-item { padding: 10px; margin: 5px 0; background: white; border: 1px solid #eee; border-radius: 4px; display: flex; align-items: center; }
-    .file-item:hover { background: #f9f9f9; }
 </style>

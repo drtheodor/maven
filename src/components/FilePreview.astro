@@ -1,12 +1,10 @@
 ---
 import { permalink } from "@/util/link";
-import { readLocal } from "@/util/files";
+import { readLocal, isReadable, isViewable } from "@/util/files";
 
 const { path } = Astro.props;
 
 const fileName: string = path.split('/').pop() ?? '/';
-const isTextFile = /\.(txt|md|html|css|js|json|bat|xml|sha256)$/i.test(path);
-const isImageFile = /\.(jpg|jpeg|png|gif|webp)$/i.test(path);
 ---
   
 <div class="file-actions">
@@ -14,9 +12,9 @@ const isImageFile = /\.(jpg|jpeg|png|gif|webp)$/i.test(path);
   <a href={permalink("/")} class="button">Back to Home</a>
 </div>
 
-{isTextFile ? (
-  <pre>{readLocal(path)}</pre>
-) : isImageFile ? (
+{isReadable(path) ? (
+  <pre class="raw-text">{readLocal(path)}</pre>
+) : isViewable(path) ? (
   <img src={path} alt={fileName} />
 ) : (
   <p>This file type cannot be previewed. Please download to view.</p>
@@ -43,12 +41,5 @@ const isImageFile = /\.(jpg|jpeg|png|gif|webp)$/i.test(path);
   img {
     max-width: 100%;
     height: auto;
-  }
-  
-  pre { 
-    background: #f5f5f5; 
-    padding: 15px; 
-    border-radius: 4px; 
-    overflow-x: auto; 
   }
 </style>

@@ -1,5 +1,11 @@
 ---
 import "@/styles/global.css";
+
+type Props = {
+  title: string,
+}
+
+const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -7,17 +13,20 @@ import "@/styles/global.css";
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Read-Only File Server</title>
+  <title>{title}</title>
 </head>
 <body>
-  <header>
-    <h1>File Server</h1>
-  </header>
   <main>
     <slot />
   </main>
-  <footer>
-    <p>Read-only file browser - All content is static</p>
-  </footer>
 </body>
+<style>
+  body { 
+    font-family: sans-serif; 
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 20px; 
+    line-height: 1.6;
+  }
+</style>
 </html>

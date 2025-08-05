@@ -3,6 +3,7 @@ import { type FileType, getAllFiles } from '@/util/files';
 import { permalink } from "@/util/link";
 import FilePreview from '@/components/FilePreview.astro';
 import DirectoryPreview from '@/components/DirectoryPreview.astro';
+import Layout from '@/layouts/Layout.astro';
 
 export function getStaticPaths() {
   return getAllFiles();
@@ -18,44 +19,23 @@ const { path, type } = Astro.props;
 const isFile = type === 'file';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Viewing: {path}</title>
-    <style>
-      body { 
-        font-family: sans-serif; 
-        max-width: 800px; 
-        margin: 0 auto; 
-        padding: 20px; 
-        line-height: 1.6;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>{path}</h1>
-    
-    <div class="breadcrumbs">
-        <a href={permalink("/browse/")}>Root</a>
-        {path.split('/').filter(Boolean).map((segment, i, arr) => {
-            let pathSoFar = arr.slice(0, i + 1).join('/');
+<Layout title={`Viewing: ${path}`}>
+  <div class="breadcrumbs">
+    <a class="breadcrumb" href={permalink("/browse/")}>Root</a>
+    {path.split('/').filter(Boolean).map((segment, i, arr) => {
+        let pathSoFar = arr.slice(0, i + 1).join('/');
 
-            if (i < arr.length - (isFile ? 1 : 0)) pathSoFar += '/';
+        if (i < arr.length - (isFile ? 1 : 0)) pathSoFar += '/';
 
-            return [
-              ' / ', <a href={permalink(`/browse/${pathSoFar}`)}>{segment}</a>
-            ];
-        })}
-    </div>
-    
-    {isFile ? (
-      <FilePreview path={path} />
-    ) : (
-      <DirectoryPreview path={path} /> 
-    )}
-  <style>
-    .breadcrumbs { margin-bottom: 20px; padding: 10px; background: #f5f5f5; border-radius: 4px; }
-  </style>
-  </body>
-</html>
+        return [
+          ' / ', <a class="breadcrumb" href={permalink(`/browse/${pathSoFar}`)}>{segment}</a>
+        ];
+    })}
+  </div>
+
+  {isFile ? (
+    <FilePreview path={path} />
+  ) : (
+    <DirectoryPreview path={path} /> 
+  )}
+</Layout>
