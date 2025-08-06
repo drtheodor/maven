@@ -35,8 +35,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Copy builds
-        run: cp -r ./releases ./dist/
       - name: Detect package manager
         id: detect-package-manager
         run: |
@@ -78,6 +76,8 @@ jobs:
             --site "${{ steps.pages.outputs.origin }}" \
             --base "${{ steps.pages.outputs.base_path }}"
         working-directory: ${{ env.BUILD_PATH }}
+      - name: Copy builds
+        run: cp -r ./releases ./dist/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
