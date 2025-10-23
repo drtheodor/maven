@@ -26,7 +26,6 @@ concurrency:
 
 env:
   BUILD_PATH: "." # default value when not using subfolders
-  SRC_PATH: "${{ runner.temp }}/static-file-server"
 
 jobs:
   build:
@@ -36,24 +35,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Checkout FS
-        run: git clone https://github.com/drtheodor/static-file-server $SRC_PATH
+        run: git clone https://github.com/drtheodor/static-file-server ${{ runner.temp }}/static-file-server
       - name: Symlink
-        run: ln -s . $SRC_PATH/static-file-server/files
+        run: ln -s . ${{ runner.temp }}/static-file-server/files
       - name: Symlink dist
-        run: mkdir $SRC_PATH/dist && ln -s . $SRC_PATH/dist/files
-      - name: Detect package manager
-        id: detect-package-manager
-        run: |
-          if [ -f "${{ github.workspace }}/bun.lock" ]; then
-            echo "manager=bun" >> $GITHUB_OUTPUT
-            echo "command=install" >> $GITHUB_OUTPUT
-            echo "runner=bun" >> $GITHUB_OUTPUT
-            echo "lockfile=bun.lock" >> $GITHUB_OUTPUT
-            exit 0
-          else
-            echo "Unable to determine package manager"
-            exit 1
-          fi
+        run: mkdir ${{ runner.temp }}/static-file-server/dist && ln -s . ${{ runner.temp }}/static-file-server/dist/files
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
@@ -62,20 +48,18 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
       - name: Install dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-        working-directory: ${{ env.SRC_PATH }}
+        run: bun install
+        working-directory: ${{ env.BUILD_PATH }}
       - name: Build with Astro
         run: |
-          ${{ steps.detect-package-manager.outputs.runner }} astro build --silent \
+          bun astro build --silent \
             --site "${{ steps.pages.outputs.origin }}" \
             --base "${{ steps.pages.outputs.base_path }}"
-        working-directory: ${{ env.SRC_PATH }}
-      #- name: Copy builds
-      #  run: cp -r ./files ./dist/files/
+        working-directory: ${{ runner.temp }}/static-file-server
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ env.SRC_PATH }}/dist
+          path: ${{ runner.temp }}/static-file-server/dist
 
   deploy:
     environment:
