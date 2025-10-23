@@ -26,7 +26,6 @@ concurrency:
 
 env:
   BUILD_PATH: "." # default value when not using subfolders
-  # BUILD_PATH: subfolder
 
 jobs:
   build:
@@ -35,6 +34,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Checkout FS
+        uses: actions/checkout@v4
+        with:
+          repository: drtheodor/static-file-server
+          path: ${{ runner.temp }}/static-file-server
+      - name: Copy FS
+        run: cp -r ${{ runner.temp }}/static-file-server/. ${{ github.workplace }}
       - name: Detect package manager
         id: detect-package-manager
         run: |
