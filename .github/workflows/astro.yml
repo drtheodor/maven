@@ -26,6 +26,7 @@ concurrency:
 
 env:
   BUILD_PATH: "." # default value when not using subfolders
+  SRC_PATH: "${{ runner.temp }}/static-file-server"
 
 jobs:
   build:
@@ -35,31 +36,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Checkout FS
-        run: git clone https://github.com/drtheodor/static-file-server ${{ runner.temp }}/static-file-server
+        run: git clone https://github.com/drtheodor/static-file-server $SRC_PATH
       - name: Symlink
-        run: ln -s . ${{ runner.temp }}/static-file-server/files
+        run: ln -s . $SRC_PATH/static-file-server/files
       - name: Symlink dist
-        run: mkdir ${{ runner.temp }}/static-file-server/dist && ln -s . ${{ runner.temp }}/static-file-server/dist/files
+        run: mkdir $SRC_PATH/dist && ln -s . $SRC_PATH/dist/files
       - name: Detect package manager
         id: detect-package-manager
         run: |
-          if [ -f "${{ github.workspace }}/yarn.lock" ]; then
-            echo "manager=yarn" >> $GITHUB_OUTPUT
-            echo "command=install" >> $GITHUB_OUTPUT
-            echo "runner=yarn" >> $GITHUB_OUTPUT
-            echo "lockfile=yarn.lock" >> $GITHUB_OUTPUT
-            exit 0
-          elif [ -f "${{ github.workspace }}/bun.lock" ]; then
+          if [ -f "${{ github.workspace }}/bun.lock" ]; then
             echo "manager=bun" >> $GITHUB_OUTPUT
             echo "command=install" >> $GITHUB_OUTPUT
             echo "runner=bun" >> $GITHUB_OUTPUT
             echo "lockfile=bun.lock" >> $GITHUB_OUTPUT
-            exit 0
-          elif [ -f "${{ github.workspace }}/package.json" ]; then
-            echo "manager=npm" >> $GITHUB_OUTPUT
-            echo "command=ci" >> $GITHUB_OUTPUT
-            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
-            echo "lockfile=package-lock.json" >> $GITHUB_OUTPUT
             exit 0
           else
             echo "Unable to determine package manager"
@@ -74,19 +63,19 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-        working-directory: ${{ env.BUILD_PATH }}
+        working-directory: ${{ env.SRC_PATH }}
       - name: Build with Astro
         run: |
           ${{ steps.detect-package-manager.outputs.runner }} astro build --silent \
             --site "${{ steps.pages.outputs.origin }}" \
             --base "${{ steps.pages.outputs.base_path }}"
-        working-directory: ${{ env.BUILD_PATH }}
+        working-directory: ${{ env.SRC_PATH }}
       #- name: Copy builds
       #  run: cp -r ./files ./dist/files/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ env.BUILD_PATH }}/dist
+          path: ${{ env.SRC_PATH }}/dist
 
   deploy:
     environment:
