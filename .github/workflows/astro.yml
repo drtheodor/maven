@@ -39,7 +39,7 @@ jobs:
       - name: Symlink
         run: ln -s . ${{ runner.temp }}/static-file-server/files
       - name: Symlink dist
-        run: mkdir -p ${{ runner.temp }}/static-file-server/dist/files && ln -s . ${{ runner.temp }}/static-file-server/dist/files
+        run: mkdir ${{ runner.temp }}/static-file-server/dist && ln -s . ${{ runner.temp }}/static-file-server/dist/files
       - name: Detect package manager
         id: detect-package-manager
         run: |
