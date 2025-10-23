@@ -24,10 +24,6 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-env:
-  BUILD_PATH: "." # default value when not using subfolders
-  SFS_DIR: "$RUNNER_TEMP/sfs"
-
 jobs:
   build:
     name: Build
@@ -35,30 +31,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Checkout FS
-        run: git clone https://github.com/drtheodor/static-file-server ${{ env.SFS_DIR }}
-      - name: Copy files
-        run: cp -r . ${{ env.SFS_DIR}}/files
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: "latest"
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
-      - name: Install dependencies
-        run: cd ${{ env.SFS_DIR}} && bun install
-      - name: Build with Astro
-        run: |
-          cd ${{ env.SFS_DIR }} && bun astro build --silent \
-            --site "${{ steps.pages.outputs.origin }}" \
-            --base "${{ steps.pages.outputs.base_path }}"
-      - name: Copy build
-        run: cp -r ${{ env.SFS_DIR }}/dist/. .
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ${{ env.BUILD_PATH }}
+      - name: Build
+        uses: drtheodor/static-file-server-actions/pages@main
 
   deploy:
     environment:
