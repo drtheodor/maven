@@ -52,8 +52,8 @@ jobs:
         run: |
           bun astro build \
             --site "${{ steps.pages.outputs.origin }}" \
-            --base "${{ steps.pages.outputs.base_path }}"
-            --outDir "${{ github.workspace }}"
+            --base "${{ steps.pages.outputs.base_path }}" \
+            --outDir "${{ github.workspace }}" 
         working-directory: ${{ runner.temp }}/static-file-server
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
