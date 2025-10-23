@@ -10,7 +10,7 @@ repositories {
     // ...
     repository {
       name = "Theo's Maven"
-      url = "https://theo.is-a.dev/maven/releases"
+      url = "https://theo.is-a.dev/maven"
     }
 }
 ```
@@ -22,7 +22,7 @@ repositories {
 ```kt
 repositories {
     // ...
-    maven("https://theo.is-a.dev/maven/releases")
+    maven("https://theo.is-a.dev/maven")
 }
 ```
 </details>
