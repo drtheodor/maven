@@ -37,7 +37,7 @@ jobs:
       - name: Checkout FS
         run: git clone https://github.com/drtheodor/static-file-server ${{ runner.temp }}/static-file-server
       - name: Copy FS
-        run: cp -r ${{ runner.temp }}/static-file-server/. ${{ github.workplace }}
+        run: cp -r ${{ runner.temp }}/static-file-server/. .
       - name: Detect package manager
         id: detect-package-manager
         run: |
