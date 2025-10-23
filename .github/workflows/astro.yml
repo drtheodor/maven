@@ -49,7 +49,7 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install dependencies
         run: bun install
-        working-directory: ${{ env.BUILD_PATH }}
+        working-directory: ${{ runner.temp }}/static-file-server
       - name: Build with Astro
         run: |
           bun astro build --silent \
