@@ -37,9 +37,9 @@ jobs:
       - name: Checkout FS
         run: git clone https://github.com/drtheodor/static-file-server ${{ runner.temp }}/static-file-server
       - name: Symlink
-        run: ln -s . ${{ runner.temp }}/static-file-server/files
+        run: ln -s releases/. ${{ runner.temp }}/static-file-server/files
       - name: Symlink dist
-        run: mkdir ${{ runner.temp }}/static-file-server/dist && ln -s . ${{ runner.temp }}/static-file-server/dist/files
+        run: mkdir ${{ runner.temp }}/static-file-server/dist && ln -s releases/. ${{ runner.temp }}/static-file-server/dist/files
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
