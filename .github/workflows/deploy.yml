@@ -36,9 +36,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Checkout FS
-        run: git clone https://github.com/drtheodor/static-file-server $SFS_DIR
+        run: git clone https://github.com/drtheodor/static-file-server ${{ env.SFS_DIR }}
       - name: Copy files
-        run: cp -r . $SFS_DIR/files
+        run: cp -r . ${{ env.SFS_DIR}}/files
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
@@ -48,15 +48,15 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install dependencies
         run: bun install
-        working-directory: $SFS_DIR
+        working-directory: ${{ env.SFS_DIR }}
       - name: Build with Astro
         run: |
           bun astro build --silent \
             --site "${{ steps.pages.outputs.origin }}" \
             --base "${{ steps.pages.outputs.base_path }}"
-        working-directory: $SFS_DIR
+        working-directory: ${{ env.SFS_DIR }}
       - name: Copy build
-        run: cp -r $SFS_DIR/dist/. .
+        run: cp -r ${{ env.SFS_DIR }}/dist/. .
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
