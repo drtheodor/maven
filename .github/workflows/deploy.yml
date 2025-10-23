@@ -47,14 +47,12 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
       - name: Install dependencies
-        run: bun install
-        working-directory: ${{ env.SFS_DIR }}
+        run: cd ${{ env.SFS_DIR}} && bun install
       - name: Build with Astro
         run: |
-          bun astro build --silent \
+          cd ${{ env.SFS_DIR }} && bun astro build --silent \
             --site "${{ steps.pages.outputs.origin }}" \
             --base "${{ steps.pages.outputs.base_path }}"
-        working-directory: ${{ env.SFS_DIR }}
       - name: Copy build
         run: cp -r ${{ env.SFS_DIR }}/dist/. .
       - name: Upload artifact
