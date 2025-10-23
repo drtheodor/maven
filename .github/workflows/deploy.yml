@@ -50,7 +50,7 @@ jobs:
         working-directory: ${{ runner.temp }}/sfs
       - name: Build with Astro
         run: |
-          bun astro build \
+          bun astro build --silent \
             --site "${{ steps.pages.outputs.origin }}" \
             --base "${{ steps.pages.outputs.base_path }}" \
             --outDir "${{ github.workspace }}" 
