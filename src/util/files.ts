@@ -1,4 +1,3 @@
-import { boolean } from 'astro:schema';
 import fs from 'fs';
 import path from 'path';
 
@@ -9,15 +8,27 @@ type FileEntry = {
   type: FileType,
 }
 
-export function isReadable(fpath: string): boolean {
-  return /\.(txt|md|html|css|js|json|bat|xml)$/i.test(fpath);
+const TEXTS = [
+  'txt', 'md', 'html', 'css', 'js', 'json', 'bat', 'xml', 'py', 'java'
+];
+
+export function isText(ext: string): boolean {
+  return TEXTS.indexOf(ext) !== -1;
 }
 
-export function isViewable(fpath: string): boolean {
-  return /\.(jpg|jpeg|png|gif|webp)$/i.test(fpath);
+const IMGS = [
+  'jpg', 'jpeg', 'png', 'gif', 'webp'
+];
+
+export function isImage(ext: string): boolean {
+  return IMGS.indexOf(ext) !== -1;
 }
 
-const BASE_PATH = './releases';
+export function getExt(fpath: string): string {
+  return path.extname(fpath).substring(1);
+}
+
+const BASE_PATH = './files';
 
 export function readLocal(fpath: string): string {
   return fs.readFileSync(path.posix.join(BASE_PATH, fpath)).toString();
