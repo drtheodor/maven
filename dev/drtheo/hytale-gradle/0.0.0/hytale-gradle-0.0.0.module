@@ -27,11 +27,11 @@
         {
           "name": "hytale-gradle-0.0.0.jar",
           "url": "hytale-gradle-0.0.0.jar",
-          "size": 13760,
-          "sha512": "5f012a6feb1c98ea8a7ae98d0446330b31734b1e3858934fee53e6310abe2f0481782089c92b7ef377277ebf8726a39c161bc5c89a90d64d6d12b201842808c9",
-          "sha256": "311f7c958150689306ea49492f2755abfe64bb8e721c1eba569cca8b56959885",
-          "sha1": "137fec78dafed49cbf7523381322b1cfc23ebaa4",
-          "md5": "00b431410a10759c9abf46cd04dfbd58"
+          "size": 13764,
+          "sha512": "ecf22d6ef073684807af810bf4f67daec090c322ede27c4a6f3b30659f82a1949165d781149e2ffc17779d666480599f0fcaf9d00abb6eafb1ee50afc79e0f51",
+          "sha256": "276bc86657098e13bbd87274cdaad9cb09b608faf655f1eec71ac7b712d980c8",
+          "sha1": "1295f99999d37b8d5b38093dece4803dc521ff84",
+          "md5": "4ce781f5eabf2fe51e1d9618a9f56443"
         }
       ]
     },
@@ -57,11 +57,11 @@
         {
           "name": "hytale-gradle-0.0.0.jar",
           "url": "hytale-gradle-0.0.0.jar",
-          "size": 13760,
-          "sha512": "5f012a6feb1c98ea8a7ae98d0446330b31734b1e3858934fee53e6310abe2f0481782089c92b7ef377277ebf8726a39c161bc5c89a90d64d6d12b201842808c9",
-          "sha256": "311f7c958150689306ea49492f2755abfe64bb8e721c1eba569cca8b56959885",
-          "sha1": "137fec78dafed49cbf7523381322b1cfc23ebaa4",
-          "md5": "00b431410a10759c9abf46cd04dfbd58"
+          "size": 13764,
+          "sha512": "ecf22d6ef073684807af810bf4f67daec090c322ede27c4a6f3b30659f82a1949165d781149e2ffc17779d666480599f0fcaf9d00abb6eafb1ee50afc79e0f51",
+          "sha256": "276bc86657098e13bbd87274cdaad9cb09b608faf655f1eec71ac7b712d980c8",
+          "sha1": "1295f99999d37b8d5b38093dece4803dc521ff84",
+          "md5": "4ce781f5eabf2fe51e1d9618a9f56443"
         }
       ]
     }
